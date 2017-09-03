@@ -395,8 +395,13 @@ export default function Gantt(element, tasks, config) {
 	function make_dates() {
 
 		for(let date of get_dates_to_draw()) {
+			let classWeekend = 'lower-text';
+			if (date.date.day() === 0 || date.date.day() === 6) {
+				classWeekend = 'lower-text-weekend';
+
+			}
 			self.canvas.text(date.lower_x, date.lower_y, date.lower_text)
-				.addClass('lower-text')
+				.addClass(classWeekend)
 				.appendTo(self.element_groups.date);
 
 			if(date.upper_text) {
@@ -467,7 +472,8 @@ export default function Gantt(element, tasks, config) {
 			upper_x: base_pos.x + x_pos[`${self.config.view_mode}_upper`],
 			upper_y: base_pos.upper_y,
 			lower_x: base_pos.x + x_pos[`${self.config.view_mode}_lower`],
-			lower_y: base_pos.lower_y
+			lower_y: base_pos.lower_y,
+			date: date
 		};
 	}
 

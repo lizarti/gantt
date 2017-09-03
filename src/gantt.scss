@@ -7,6 +7,7 @@ $light-yellow: #fcf8e3;
 $text-muted: #666;
 $text-light: #555;
 $text-color: #333;
+$text-color-weekend: #D0560D;
 $blue: #a3a3ff;
 $handle-color: #ddd;
 
@@ -20,6 +21,11 @@ $handle-color: #ddd;
 		stroke: $border-color;
 		stroke-width: 1.4;
 	}
+	// .grid-header {
+	// 	fill: #ffffff;
+	// 	stroke: $border-color;
+	// 	stroke-width: 1.4;
+	// }
 	.grid-row {
 		fill: #ffffff;
 	}
@@ -108,7 +114,7 @@ $handle-color: #ddd;
 		}
 	}
 
-	.lower-text, .upper-text {
+	.lower-text, .upper-text, .lower-text-weekend {
 		font-size: 12px;
 		text-anchor: middle;
 	}
@@ -117,6 +123,9 @@ $handle-color: #ddd;
 	}
 	.lower-text {
 		fill: $text-color;
+	}
+	.lower-text-weekend {
+		fill: $text-color-weekend;
 	}
 
 	#details .details-container {
